@@ -6,11 +6,12 @@ var adverbs = [];
 var i = 0, string = "";
 
 var output = function(result) {
-	$('#output-field').html(result[0]) + $('#output-field').html(result[1]) + $('#output-field').html(result[2]);
+	$('#output-field').html("<p>" + result[0] + "</p> <p>" + result[1] + "</p> <p>" + result[2] + "</p>");
+
 }
 
-(document).ready(function() {
-$('submit').on('click', function() {
+$(document).ready(function() {
+$('#submit').on('click', function() {
 	names.push($('#name0').val());
 	names.push($('#name1').val());
 	names.push($('#name2').val());
@@ -27,16 +28,18 @@ $('submit').on('click', function() {
 	nounB.push($('#nounB1').val());
 	nounB.push($('#nounB2').val());
 
-	adjectives.push($('#adjective0').val());
-	adjectives.push($('#adjective1').val());
-	adjectives.push($('#adjective2').val());
+	adverbs.push($('#adverbs0').val());
+	adverbs.push($('#adverbs1').val());
+	adverbs.push($('#adverbs2').val());
+
+	console.log(adjectives);
 	
 	var result = $.map(names, function(name) {
 	string = name + " went " + adverbs[i] + " to the " + nounA[i] + " to buy a " + adjectives[i] + " " + nounB[i] + ".";
 	i++;
 	return string;
 	});
-
+	console.log(result);
 	output(result);
 });
 });
