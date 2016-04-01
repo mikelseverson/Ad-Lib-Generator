@@ -1,4 +1,4 @@
-# Ad Lib generator
+# Ad Lib Generator
 Learning to map javascript arrays
 
 When the submit button is clicked, names, nouns, adjectives, adverbs are collected into arrays from the html form.
